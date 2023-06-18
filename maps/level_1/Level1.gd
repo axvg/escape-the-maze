@@ -17,8 +17,8 @@ func _ready():
 		doors.append(cell)
 	spawn_items()
 	$Player.connect('dead', self, 'game_over')
-	$Player.connect('grabbed_key', self, 'game_over')
-	$Player.connect('win', self, 'game_over')
+	$Player.connect('grabbed_key', self, '_on_Player_grabbed_key')
+	$Player.connect('win', self, '_on_Player_win')
 
 func set_camera_limits():
 	var map_size = $Ground.get_used_rect()
@@ -47,3 +47,15 @@ func spawn_items():
 				var p = Pickup.instance()
 				p.init(type, pos)
 				add_child(p)
+
+func game_over():
+	pass
+
+
+func _on_Player_win():
+	pass # Replace with function body.
+
+
+func _on_Player_grabbed_key():
+	for cell in doors:
+		$Walls.set_cellv(cell, -1)

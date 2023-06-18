@@ -33,3 +33,6 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+
+[connection signal="grabbed_key" from="Player" to="." method="_on_Player_grabbed_key"]
+[connection signal="win" from="Player" to="." method="_on_Player_win"]
