@@ -1,5 +1,10 @@
 name: "Publish to GitHub Pages"
 
+permissions:
+  pull-requests: write
+  issues: write
+  repository-projects: write
+
 env:
   GODOT_VERSION: 3.5.1
   EXPORT_NAME: escape-the-maze
