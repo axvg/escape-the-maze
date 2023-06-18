@@ -1,7 +1,7 @@
 extends Node
 
 var levels = [
-				'res://levels/Level1.tscn',
+				'res://levels/level_1/Level1.tscn',
 #				'res://levels/Level2.tscn'
 			]
 
