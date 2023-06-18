@@ -1,38 +1,38 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://tileset/tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://maps/level_1/Level1.gd" type="Script" id=3]
+[ext_resource path="res://levels/level_1/Level1.gd" type="Script" id=1]
+[ext_resource path="res://tileset/tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://item/Pickup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://characters/enemies/Enemy.tscn" type="PackedScene" id=4]
-[ext_resource path="res://item/Pickup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=5]
 
 [node name="Level1" type="Node2D"]
-script = ExtResource( 3 )
+script = ExtResource( 1 )
 Enemy = ExtResource( 4 )
-Pickup = ExtResource( 5 )
+Pickup = ExtResource( 3 )
 
 [node name="Ground" type="TileMap" parent="."]
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 format = 1
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Walls" type="TileMap" parent="."]
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 format = 1
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Items" type="TileMap" parent="."]
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 format = 1
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="Player" parent="." instance=ExtResource( 5 )]
 
 [connection signal="grabbed_key" from="Player" to="." method="_on_Player_grabbed_key"]
 [connection signal="win" from="Player" to="." method="_on_Player_win"]
